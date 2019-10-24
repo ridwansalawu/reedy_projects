@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'seeds/index'
   get 'assets/index'
   root 'home#index'
   
@@ -14,6 +15,13 @@ resources :employees do
   end
 end
 
+
+resources :assets do
+  
+  member do
+    get :delete
+  end
+end
 
 
 

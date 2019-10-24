@@ -1,2 +1,3 @@
 class Asset < ApplicationRecord
+    
 end

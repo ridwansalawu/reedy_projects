@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'sample.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+    t = Asset.new
+    t.asset_code = row['asset_code']
+    t.address = row['address']
+    t.cp_page = row['CP page #']
+    t.comments = row['SP comments']
+    t.save
+    puts "-----------#{t.asset_code} saved--------------"
+
+end
+puts "there are now #+++++++#{Asset.count} rows in the Assets table+++++++++"
+
+
