@@ -1,18 +1,40 @@
-<table summary="Subject form fields">
-  <tr>
-    <th>Name</th>
-    <td><%= f.text_field(:name) %></td>
-  </tr>
-  <tr>
-    <th>Position</th>
-    <td><%= f.select(:position, 1..@subject_count ) %></td>
-  </tr>
-  <tr>
-    <th>Visible</th>
-    <td><%= f.check_box(:visible) %></td>
-  </tr>
-  <tr>
-    <th>Created</th>
-    <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
-  </tr>
-</table>
+<%= link_to("<< Back to List", employees_path, :class => 'back-link') %>
+
+<div class="employees new">
+  <h2>Mould a New Employee</h2>
+
+  <%= form_for @employee do |f| %>
+
+    <table summary="Employee form field">
+      <tr>
+        <th>First Name</th>
+        <td><%= f.text_field(:first_name) %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= f.text_field(:last_name) %></td>
+      </tr>
+      <tr>
+        <th>Date of Birth</th>
+        <td><%= f.text_field(:DOB) %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= f.text_field(:email) %></td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td><%= f.text_field(:phone) %></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td><%= f.text_field(:address) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Employee") %>
+    </div>
+
+  <% end %>
+</div>

@@ -22,4 +22,6 @@ csv.each do |row|
 end
 puts "there are now #+++++++#{Asset.count} rows in the Assets table+++++++++"
 
+employee = Employee.create(:first_name => "Ridwan", :last_name =>"Salawu", :DOB =>"1029283", :email  => "ridwan@yahoo.com", :phone => "7857577r7", :address => "mfdghjmv fifjdj kjj")
+
 
