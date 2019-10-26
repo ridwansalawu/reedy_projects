@@ -11,13 +11,14 @@ require 'csv'
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'sample.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
+    puts row['address']
     t = Asset.new
-    t.asset_code = row['asset_code']
     t.address = row['address']
+    t.asset_code = row['asset_code']
     t.cp_page = row['CP page #']
     t.comments = row['SP comments']
-    t.save
-    puts "-----------#{t.asset_code} saved--------------"
+    # t.save
+    # puts "-----------#{t.address} saved--------------"
 
 end
 puts "there are now #+++++++#{Asset.count} rows in the Assets table+++++++++"

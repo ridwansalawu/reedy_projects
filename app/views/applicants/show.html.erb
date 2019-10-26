@@ -1,0 +1,18 @@
+
+
+<%= link_to("<< Back to All Applicants", applicants_path, :class => 'back-link') %><br>
+
+<% if @applicant.white_card.attached? %>
+<img src="<%=(url_for(@applicant.white_card)) %>" alt="white card" height="100" width="100">
+<% end %>
+
+
+
+<h1><%= @applicant.first_name.upcase + ", " + @applicant.last_name %></h1>
+
+<p>Email: <%= @applicant.email %></p>
+<p>Date of Birth: <%= @applicant.DOB %></p>
+<p>Address:<%= @applicant.address %></p>
+<p>Phone: <%= @applicant.phone %></p>
+
+

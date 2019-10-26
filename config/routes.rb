@@ -1,28 +1,34 @@
 Rails.application.routes.draw do
 
+  
+ 
   get 'seeds/index'
-  get 'assets/index'
+ 
   root 'home#index'
   
   
   get 'home/index'
 
 
-resources :employees do
-  
-  member do
-    get :delete
-  end
-end
+    resources :employees do
+      
+      member do
+        get :delete
+      end
+    end
 
 
-resources :assets do
-  
-  member do
-    get :delete
-  end
-end
+    resources :assets do
+      
+      member do
+        get :delete
+      end
+    end
 
+
+    resources :applicants do
+
+    end
 
 
 

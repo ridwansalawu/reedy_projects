@@ -6,12 +6,13 @@ class EmployeesController < ApplicationController
   end
 
   def show
+    @employee = Employee.find(params[:id])
   end
 
 
   #creating
   def new
-    @employee = Employee.new(:first_name => "test", :last_name => "test")
+    @employee = Employee.new()
     puts "Employee created: #{@employee}"
   end
 
@@ -30,18 +31,33 @@ class EmployeesController < ApplicationController
 
   #editing
   def edit
+    @employee = Employee.find(params[:id])
+
   end
 
-  def update
+   def update
+    @employee = Employee.find(params[:id])
+    if @employee.update_attributes(employee_params)
+      flash[:notice] = "Employee updated successfully."
+      redirect_to(employee_path(@employee))
+    else
+      render('edit')
+    end
   end
 
 
   #deleting
   def delete
+    @employee = Employee.find(params[:id])
   end
 
   def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy
+    flash[:notice] = "Employee destroyed successfully."
+    redirect_to(employees_path)
   end
+
 end
 
 

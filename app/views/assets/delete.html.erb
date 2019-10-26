@@ -1,0 +1,16 @@
+
+<div class="asset delete">
+  <h2>Remove  <%= @asset.asset_code %> ?</h2>
+
+  <%= form_for(@asset, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want eradicate <%= @asset.asset_code %>?</p>
+
+    <p class="reference-name"><%= f.object.asset_code %></p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete") %>
+    </div>
+
+  <% end %>
+</div>

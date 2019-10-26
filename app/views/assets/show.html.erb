@@ -1,0 +1,9 @@
+<%= link_to("<< Back to All Assets", assets_path, :class => 'back-link') %>
+<h1><%= @asset.asset_code %></h1>
+
+<p>Address: <%= @asset.address %></p>
+<p>Page on the construction plan: <%= @asset.cp_page %></p>
+<p>Pit Id:<%= @asset.pit_id %></p>
+<p>Status: <%= @asset.status %></p>
+<p>Asset Type: <%=  @asset.asset_type %></p>
+<p>Workers: <%= @asset.workers %></p>

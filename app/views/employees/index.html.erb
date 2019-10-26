@@ -25,9 +25,9 @@
       <td><%= employee.address %></td>
       
       <td class="actions">
-        <%= link_to("Show", "#", :class => 'action show') %>
-        <%= link_to("Edit", "#", :class => 'action edit') %>
-        <%= link_to("Delete", "#", :class => 'action delete') %>
+        <%= link_to("Profile", employee_path(employee), :class => 'action show') %>
+        <%= link_to("Update", edit_employee_path(employee), :class => 'action edit') %>
+        <%= link_to("Delete", delete_employee_path(employee), :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

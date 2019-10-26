@@ -23,9 +23,9 @@
       <td><%= asset.asset_type %></td>
       <td><%= asset.status %></td>
       <td class="actions">
-        <%= link_to("Show", "#", :class => 'action show') %>
-        <%= link_to("Edit", "#", :class => 'action edit') %>
-        <%= link_to("Delete", "#", :class => 'action delete') %>
+        <%= link_to("View", asset_path(asset), :class => 'action show') %>
+        <%= link_to("Edit", edit_asset_path(asset), :class => 'action edit') %>
+        <%= link_to("Delete", delete_asset_path(asset), :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

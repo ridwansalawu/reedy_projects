@@ -1,2 +1,16 @@
-<h1>Employees#delete</h1>
-<p>Find me in app/views/employees/delete.html.erb</p>
+
+<div class="employee delete">
+  <h2>Take <%= @employee.first_name %> out!</h2>
+
+  <%= form_for(@employee, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want eradicate <%= @employee.first_name %>?</p>
+
+    <p class="reference-name"><%= f.object.first_name %></p>
+
+    <div class="form-buttons">
+      <%= f.submit("shoot!") %>
+    </div>
+
+  <% end %>
+</div>

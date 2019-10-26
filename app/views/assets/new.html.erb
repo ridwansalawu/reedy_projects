@@ -1,0 +1,40 @@
+<%= link_to("<< Back to Assets List", assets_path, :class => 'back-link') %>
+
+<div class="assets new">
+  <h2>Build a New Asset</h2>
+
+  <%= form_for @asset do |f| %>
+
+    <table summary="Asset form field">
+      <tr>
+        <th>Asset Code</th>
+        <td><%= f.text_field(:asset_code) %></td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td><%= f.text_field(:address) %></td>
+      </tr>
+      <tr>
+        <th>Page on Contruction Plan</th>
+        <td><%= f.text_field(:cp_page) %></td>
+      </tr>
+      <tr>
+        <th>Asset Type</th>
+        <td><%= f.text_field(:asset_type) %></td>
+      </tr>
+      <tr>
+        <th>Pit ID</th>
+        <td><%= f.text_field(:pit_id) %></td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td><%= f.select(:status,  [["incomplete"], ["complete"], ["defect"], ["paid"]]) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Asset") %>
+    </div>
+
+  <% end %>
+</div>
