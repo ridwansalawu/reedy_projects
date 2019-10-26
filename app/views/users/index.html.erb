@@ -1,0 +1,35 @@
+
+
+
+<div class="user index">
+  <h2>All Users</h2>
+
+  <%= image_tag('plus_sign.png', :size => '11x11', :alt => '+') %>
+  <%= link_to("Add New User", new_user_path, :class => 'action new') %>
+
+  <table class="listing" summary="user list">
+    <tr class="header">
+      
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Username</th>
+      <th>Actions</th>
+
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.last_name.upcase + ", " + user.first_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.username %></td>
+      
+      <td class="actions">
+        <%= link_to("Profile", user_path(user), :class => 'action show') %>
+        <%= link_to("Update", edit_user_path(user), :class => 'action edit') %>
+        <%= link_to("Delete", delete_user_path(user), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

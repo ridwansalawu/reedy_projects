@@ -1,0 +1,24 @@
+
+<%= link_to("back", new_employee_path) %>
+
+<div class="user new">
+<h2>Sign Up</h2>
+
+<%= form_for(@user) do |f| %>
+<p> First Name: <%= f.text_field(:first_name) %><p>
+<p>Last Name: <%= f.text_field(:last_name) %><p>
+<p>Username: <%= f.text_field(:username) %><p>
+<p>Email: <%= f.text_field(:email) %><p>
+<p>Phone: <%= f.text_field(:phone) %><p>
+<%
+=begin%>
+ <p>Password: <%= password_field("#") %><p> 
+<%
+=end%>
+
+<p>Submit: <%= f.submit("submit")%>  </p>
+
+
+
+<% end %>
+</div>

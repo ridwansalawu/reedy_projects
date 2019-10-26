@@ -1,0 +1,13 @@
+
+
+<%= link_to("<< Back to Users", users_path, :class => 'back-link') %>
+<h1><%= @user.first_name.upcase + ", " + @user.last_name %></h1>
+
+<p>Email: <%= @user.email %></p>
+<p>Date of Birth: <%= @user.DOB %></p>
+<p>Address:<%= @user.address %></p>
+<p>Phone: <%= @user.phone %></p>
+<p>Username: <%=  @user.username %></p>
+<p>Admin? :</p>
+
+

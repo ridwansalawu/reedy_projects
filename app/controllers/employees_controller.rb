@@ -1,5 +1,10 @@
 class EmployeesController < ApplicationController
 
+
+
+
+
+
   #reading
   def index
     @employees = Employee.all
@@ -13,7 +18,6 @@ class EmployeesController < ApplicationController
   #creating
   def new
     @employee = Employee.new()
-    puts "Employee created: #{@employee}"
   end
 
   def create
@@ -66,3 +70,5 @@ private
   def employee_params
     params.require(:employee).permit(:first_name, :last_name, :email, :DOB, :phone, :address)
   end
+
+ 

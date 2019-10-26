@@ -4,11 +4,9 @@
   <%= link_to("Employees", employees_path) %>
   <%= link_to("Assets", assets_path, :class => 'action new') %>
   <%= link_to("Apply", new_applicant_path, :class => 'back-link') %>
-  <%
-=begin%>
- <%= link_to("Apply", new_applicant_path, :class => 'action new') %> 
-<%
-=end%>
+  <%= link_to("Sign Up", new_user_path, :class => 'back-link') %>
+  <%= link_to("Sign In", "#", :class => 'back-link') %>
+ 
   
   
   </aside>
