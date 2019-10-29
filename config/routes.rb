@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'seeds/index'
  
   
-  
+  post "assets", :to => 'assets#index_search'
   
   get 'home/index'
 

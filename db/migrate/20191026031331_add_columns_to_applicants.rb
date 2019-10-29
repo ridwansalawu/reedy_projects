@@ -8,3 +8,5 @@ class AddColumnsToApplicants < ActiveRecord::Migration[6.0]
       add_column :applicants, "address", :string  
   end
 end
+
+

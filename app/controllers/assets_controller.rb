@@ -3,8 +3,17 @@ class AssetsController < ApplicationController
 
    #reading
    def index
-    @assets = Asset.sorted
+    search = flash[:search]
+    puts "Search is #{search}"
+    @assets = Asset.sorted.where("asset_code LIKE '%#{search}%'")
   end
+
+  def index_search
+    flash[:search] = params[:search]
+    puts "flash search #{flash[:search]}"
+    redirect_to "/assets"
+  end
+
 
   def show
     @asset = Asset.find(params[:id])

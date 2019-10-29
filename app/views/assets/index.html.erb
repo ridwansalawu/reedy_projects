@@ -2,6 +2,10 @@
 
 <div class="assets index">
   <h2>Assets</h2>
+  <%= form_with(url: "/assets", method: "post") do %>
+  Search Assets: <input type="search" name="search"><br>
+  <input type="submit" value="search">
+  <% end %>
 
   <%= image_tag('plus_sign.png', :size => '11x11', :alt => '+') %>
   <%= link_to("Add New Asset", new_asset_path, :class => 'action new') %><br>
@@ -21,13 +25,12 @@
     <% @assets.each do |asset| %>
     <tr>
       <td><%= asset.id %></td>
-      <td><%= asset.asset_code %></td>
+      <td><%= link_to(asset.asset_code, asset_path(asset), :class => 'action show') %></td>
       <td><%= asset.address %></td>
       <td><%= asset.cp_page %></td>
       <td><%= asset.asset_type %></td>
       <td><%= asset.status %></td>
       <td class="actions">
-        <%= link_to('<%= Time.now %>', asset_path(asset), :class => 'action show') %>
         <%= link_to("Edit", edit_asset_path(asset), :class => 'action edit') %>
         <%= link_to("Delete", delete_asset_path(asset), :class => 'action delete') %>
       </td>
