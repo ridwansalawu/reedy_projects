@@ -1,13 +1,10 @@
 class EmployeesController < ApplicationController
 
-
-
-
-
-
+  layout "main"
   #reading
   def index
-    @employees = Employee.all
+    @employees = Employee.sorted
+    
   end
 
   def show
@@ -27,7 +24,7 @@ class EmployeesController < ApplicationController
       if @employee.save
         puts "++++++++++saved++++++++++++"
         flash[:notice] = "A new employee has just been manufactured successfully."
-        redirect_to("/")
+        redirect_to(employees_path)
       else
         render('new')
       end

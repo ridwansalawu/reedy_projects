@@ -23,6 +23,101 @@ csv.each do |row|
 end
 puts "there are now #+++++++#{Asset.count} rows in the Assets table+++++++++"
 
-employee = Employee.create(:first_name => "Ridwan", :last_name =>"Salawu", :DOB =>"1029283", :email  => "ridwan@yahoo.com", :phone => "7857577r7", :address => "mfdghjmv fifjdj kjj")
+# employee = Employee.create(:first_name => "Ridwan", 
+#                            :last_name =>"Salawu", 
+#                            :DOB =>"1029283", 
+#                            :email  => "ridwan@yahoo.com", 
+#                            :phone => "7857577r7", 
+#                            :address => "mfdghjmv fifjdj kjj")
+
+
+
+
+Rate.create(
+    :grade => "supervisor",
+    :xlarge_pit => 350,
+    :large_pit => 300, 
+    :medium_pit => 175,
+    :xlarge_acm => 0,
+    :large_acm => 0, 
+    :medium_acm => 25,
+    :trench => 18,
+    :concrete => 0,
+    :bitumen => 0, 
+    :paver => 0, 
+    :brick => 0,
+    :rock => 0,
+    :riser => 0,
+    :night => 0,
+    :extras => 0, 
+    :comments => ""
+    
+)
+
+Rate.create(
+    :grade => "team_leader",
+    :xlarge_pit => 350,
+    :large_pit => 300, 
+    :medium_pit => 175,
+    :xlarge_acm => 0,
+    :large_acm => 0, 
+    :medium_acm => 0,
+    :trench => 18,
+    :concrete => 0,
+    :bitumen => 0, 
+    :paver => 0, 
+    :brick => 0,
+    :rock => 0,
+    :riser => 0,
+    :night => 0,
+    :extras => 0, 
+    :comments => ""
+    
+)
+
+Rate.create(
+    :grade => "civil_worker",
+    :xlarge_pit => 300,
+    :large_pit => 250, 
+    :medium_pit => 150,
+    :xlarge_acm => 0,
+    :large_acm => 0, 
+    :medium_acm => 0,
+    :trench => 18,
+    :concrete => 0,
+    :bitumen => 0, 
+    :paver => 0, 
+    :brick => 0,
+    :rock => 0,
+    :riser => 0,
+    :night => 20,
+    :extras => 0, 
+    :comments => ""
+    
+)
+
+Rate.create(
+    :grade => "labourer",
+    :xlarge_pit => 250,
+    :large_pit => 180, 
+    :medium_pit => 120,
+    :xlarge_acm => 0,
+    :large_acm => 0, 
+    :medium_acm => 0,
+    :trench => 18,
+    :concrete => 0,
+    :bitumen => 0, 
+    :paver => 0, 
+    :brick => 0,
+    :rock => 0,
+    :riser => 0,
+    :night => 20,
+    :extras => 0, 
+    :comments => ""
+    
+)
+
+
+
 
 

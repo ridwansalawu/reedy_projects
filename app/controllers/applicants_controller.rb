@@ -1,5 +1,7 @@
 class ApplicantsController < ApplicationController
 
+  layout "main"
+
 
   def index
     @applicants = Applicant.all

@@ -5,32 +5,7 @@
 
   <%= form_for @asset do |f| %>
 
-    <table summary="Asset form field">
-      <tr>
-        <th>Asset Code</th>
-        <td><%= f.text_field(:asset_code) %></td>
-      </tr>
-      <tr>
-        <th>Address</th>
-        <td><%= f.text_field(:address) %></td>
-      </tr>
-      <tr>
-        <th>Page on Contruction Plan</th>
-        <td><%= f.text_field(:cp_page) %></td>
-      </tr>
-      <tr>
-        <th>Asset Type</th>
-        <td><%= f.text_field(:asset_type) %></td>
-      </tr>
-      <tr>
-        <th>Pit ID</th>
-        <td><%= f.text_field(:pit_id) %></td>
-      </tr>
-      <tr>
-        <th>Status</th>
-        <td><%= f.select(:status,  [["incomplete"], ["complete"], ["defect"], ["paid"]]) %></td>
-      </tr>
-    </table>
+    <%= render(:partial => "form", :locals => {:f => f}) %>
 
     <div class="form-buttons">
       <%= f.submit("Update Asset") %>

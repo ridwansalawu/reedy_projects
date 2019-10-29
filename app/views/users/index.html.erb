@@ -6,6 +6,9 @@
 
   <%= image_tag('plus_sign.png', :size => '11x11', :alt => '+') %>
   <%= link_to("Add New User", new_user_path, :class => 'action new') %>
+  <%= link_to("Back to Menu", admin_path, :class => 'action new') %>
+
+<div> <%= pluralize(@users.size, "User") %> found </div>
 
   <table class="listing" summary="user list">
     <tr class="header">
@@ -20,7 +23,7 @@
     <% @users.each do |user| %>
     <tr>
       <td><%= user.last_name.upcase + ", " + user.first_name %></td>
-      <td><%= user.email %></td>
+      <td><%= mail_to(user.email) %></td>
       <td><%= user.phone %></td>
       <td><%= user.username %></td>
       

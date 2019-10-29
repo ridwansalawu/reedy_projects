@@ -1,4 +1,4 @@
-
+<% @view_title = "All Employees" %>
 
 
 <div class="employee index">
@@ -9,7 +9,7 @@
 
   <table class="listing" summary="employee list">
     <tr class="header">
-      
+      <th></th>
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
@@ -19,6 +19,7 @@
     </tr>
     <% @employees.each do |employee| %>
     <tr>
+      <td><%= employee.id %></td>
       <td><%= employee.last_name.upcase + ", " + employee.first_name %></td>
       <td><%= employee.email %></td>
       <td><%= employee.phone %></td>

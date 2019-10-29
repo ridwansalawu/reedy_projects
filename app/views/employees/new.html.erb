@@ -5,32 +5,7 @@
 
   <%= form_for @employee do |f| %>
 
-    <table summary="Employee form field">
-      <tr>
-        <th>First Name</th>
-        <td><%= f.text_field(:first_name) %></td>
-      </tr>
-      <tr>
-        <th>Last Name</th>
-        <td><%= f.text_field(:last_name) %></td>
-      </tr>
-      <tr>
-        <th>Date of Birth</th>
-        <td><%= f.text_field(:DOB) %></td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td><%= f.text_field(:email) %></td>
-      </tr>
-      <tr>
-        <th>Phone</th>
-        <td><%= f.text_field(:phone) %></td>
-      </tr>
-      <tr>
-        <th>Address</th>
-        <td><%= f.text_field(:address) %></td>
-      </tr>
-    </table>
+    <%= render(:partial => "form", :locals => {:f => f}) %>
 
     <div class="form-buttons">
       <%= f.submit("Create Employee") %>

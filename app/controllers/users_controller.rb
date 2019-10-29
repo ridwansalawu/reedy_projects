@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  layout "main"
+
+    # before_action :confirm_logged_in
 
   def index
     @users = User.all
@@ -32,7 +35,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to(user_path(@user))
+      redirect_to(users_path(@user))
     else
       render('edit')
     end
@@ -45,13 +48,29 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to(users.path)
+    redirect_to(users_path)
  end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone, :username)
+    params.require(:user).permit(
+      :first_name,
+      :last_name, 
+      :email,
+      :phone, 
+      :username,
+      :password )
+  end
+
+  private
+
+  def confirm_logged_in
+    unless session[:user_id]
+      flash[:notice] = "please log in."
+      redirect_to(access_login_path)
+      
+    end
   end
 
 end

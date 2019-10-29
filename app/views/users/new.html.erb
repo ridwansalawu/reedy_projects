@@ -1,8 +1,8 @@
 
-<%= link_to("back", new_employee_path) %>
+<%= link_to("back", users_path, :class => "back-link") %>
 
 <div class="user new">
-<h2>Sign Up</h2>
+<h2>Create User</h2>
 
 <%= form_for(@user) do |f| %>
 <p> First Name: <%= f.text_field(:first_name) %><p>
@@ -10,6 +10,8 @@
 <p>Username: <%= f.text_field(:username) %><p>
 <p>Email: <%= f.text_field(:email) %><p>
 <p>Phone: <%= f.text_field(:phone) %><p>
+<p>Password: <%= f.password_field(:password) %><p>
+
 <%
 =begin%>
  <p>Password: <%= password_field("#") %><p> 

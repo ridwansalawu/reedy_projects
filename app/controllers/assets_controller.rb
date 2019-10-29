@@ -1,7 +1,9 @@
 class AssetsController < ApplicationController
+   layout "main"
+
    #reading
    def index
-    @assets = Asset.all
+    @assets = Asset.sorted
   end
 
   def show

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_091721) do
+ActiveRecord::Schema.define(version: 2019_10_27_111136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,28 @@ ActiveRecord::Schema.define(version: 2019_10_26_091721) do
     t.string "account_no", limit: 15
     t.string "rank"
     t.string "admin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rates", force: :cascade do |t|
+    t.string "grade"
+    t.decimal "xlarge_pit", precision: 7, scale: 2
+    t.decimal "large_pit", precision: 7, scale: 2
+    t.decimal "medium_pit", precision: 7, scale: 2
+    t.decimal "xlarge_acm", precision: 7, scale: 2
+    t.decimal "large_acm", precision: 7, scale: 2
+    t.decimal "medium_acm", precision: 7, scale: 2
+    t.decimal "trench", precision: 7, scale: 2
+    t.decimal "concrete", precision: 7, scale: 2
+    t.decimal "bitumen", precision: 7, scale: 2
+    t.decimal "paver", precision: 7, scale: 2
+    t.decimal "brick", precision: 7, scale: 2
+    t.decimal "rock", precision: 7, scale: 2
+    t.decimal "riser", precision: 7, scale: 2
+    t.decimal "night", precision: 7, scale: 2
+    t.decimal "extras", precision: 7, scale: 2
+    t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
