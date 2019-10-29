@@ -8,6 +8,9 @@ $yellow: #F2DC87;
 $dark_brown: #332318;
 $light_brown: #4C2516;
 $white: #FFFFFF;
+$light_blue: #7fb1f3;
+$sky_blue: #d7e4fa;
+$navy_blue: #000080;
 
 $sans_serif: Verdana,Lucida,Arial,Helvetica,sans-serif;
 
@@ -57,7 +60,7 @@ a:hover {}
 
 #main {
   min-height: 500px;
-  background: $yellow;
+  background: $sky_blue;
 }
 
 #navigation {
@@ -75,7 +78,7 @@ a:hover {}
   clear: both;
   height: 2.5em;
   text-align: right;
-  background: $light_brown image-url('footer_gradient.png') repeat-y 0 0;
+  background: blue, image-url('footer_gradient.png') repeat-y 0 0;
   color: $yellow;
 
   p {
