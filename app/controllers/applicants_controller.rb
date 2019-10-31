@@ -1,6 +1,6 @@
 class ApplicantsController < ApplicationController
 
-  layout "main"
+  layout "public"
 
 
   def index

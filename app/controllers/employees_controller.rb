@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
 
-  layout "main"
+  layout "public"
   #reading
   def index
     @employees = Employee.sorted

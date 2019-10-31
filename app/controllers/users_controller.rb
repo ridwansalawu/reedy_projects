@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  layout "main"
+  layout "public"
 
     # before_action :confirm_logged_in
 

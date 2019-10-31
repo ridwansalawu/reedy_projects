@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Reedy Projects: Home<%= " | #{@page_title}" if @page_title %></title>
-    <%= stylesheet_link_tag('application', :media => 'all') %>
-  </head>
-  <body>
+    <head>
+      <title>Reedy Projects: Home<%= " | #{@page_title}" if @page_title %></title>
+      <%= stylesheet_link_tag('application', :media => 'all') %>
+    </head>
+    
+    <body>
+        <div class="container">
 
-    <div id="header">
-      <h1>Reedy Projects</h1>
-    </div>
+            <header id="header">
+              <h1>Reedy Projects</h1>
+            </header>
 
-    <div id="main">
+            <nav class="navigation">
+            <ul>
+                <li>
+                   <%= link_to("Admin", admin_path) %>
+                </li>
+                <li>
+                   <%= link_to("Employees", employees_path) %>
+                </li>
+                <li>
+                    <%= link_to("Assets", assets_path, :class => 'action new') %>
+                </li>
+                <li>
+                    <%= link_to("Apply", new_applicant_path, :class => 'back-link') %>
+                </li>
+                <li>
+                    <%= link_to("Sign Up", new_user_path, :class => 'back-link') %>
+                </li>
+                <li>
+                    <%= link_to("Sign In", "#", :class => 'back-link') %>
+                </li>
+            </ul>
+          
+                <%= render(:partial => 'layouts/navigation', :locals => { :subjects => @subjects} ) %>
+            </nav>
 
-      <%
-=begin%>
- <div id="navigation">
-        <%= render(:partial => 'layouts/navigation', :locals => { :subjects => @subjects} ) %>
-      </div> 
-<%
-=end%>
+            <aside id="sidebar">
+            </aside>
 
-      <div id="content">
-        <%= yield %>
-      </div>
-      <div class="clear"></div>
+            <article>
+                <%= yield %>
+            </article>
+             
 
-    </div>
-
-    <div id="footer">
-      <p id="copyright">&copy; Reedy Projects</p>
-    </div>
-
-  </body>
+            <footer id="footer">
+              <p id="copyright">&copy;<%= Time.now.year %>Reedy Projects</p>
+            </footer>
+        </div>
+    </body>
 </html>

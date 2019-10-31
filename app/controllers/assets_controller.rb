@@ -1,5 +1,5 @@
 class AssetsController < ApplicationController
-   layout "main"
+   layout "public"
 
    #reading
    def index
