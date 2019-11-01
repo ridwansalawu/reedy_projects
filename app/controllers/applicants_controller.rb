@@ -3,6 +3,7 @@ class ApplicantsController < ApplicationController
   layout "public"
 
 
+  before_action :confirm_logged_in
   def index
     @applicants = Applicant.all
   end

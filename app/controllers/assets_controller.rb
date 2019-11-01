@@ -1,6 +1,8 @@
 class AssetsController < ApplicationController
    layout "public"
 
+   before_action :confirm_logged_in
+
    #reading
    def index
     search = flash[:search]
