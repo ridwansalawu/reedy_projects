@@ -152,7 +152,7 @@ img {
 .container {
   margin: 30px;
   // background-color: #63b18e;
-  background-color: rgb(58, 58, 59);
+  background-color: #b1a296;
   // background-image: image-url("lendlease_main.jpg");
   // background-color:#696969;
   // background: linear-gradient(to bottom, #ffffff 0%, #003366 54%);
@@ -405,30 +405,60 @@ img {
 
 
 
+// .header {
+//   background: linear-gradient(to left, #003399 0%, #003300 100%);
+// }
+
+// .navigation {
+//   background: linear-gradient(to right, #003399 0%, #003300 100%);
+// }
+
+
+// .sidebar {
+//   background: linear-gradient(to top left, #003399 0%, #003300 100%);
+//   border: none;
+  
+// }
+
+// .photos {
+//   background: linear-gradient(to top right, #003399 0%, #003300 100%);
+// }
+
+// .footer {
+//   background: linear-gradient(to top, #003399 0%, #003300 100%);
+// }
+
+// .content {
+//   background: linear-gradient(to top, #003399 0%, #003300 100%);
+//   // margin: auto;
+// }  
+
+
+
 .header {
-  background: linear-gradient(to left, #003399 0%, #003300 100%);
+  background: linear-gradient(to left, #7395ae 0%, #557a95 100%);
 }
 
 .navigation {
-  background: linear-gradient(to right, #003399 0%, #003300 100%);
+  background: linear-gradient(to right, #7395ae 0%, #557a95  100%);
 }
 
 
 .sidebar {
-  background: linear-gradient(to top left, #003399 0%, #003300 100%);
+  background: #7395ae;
   border: none;
   
 }
 
 .photos {
-  background: linear-gradient(to top right, #003399 0%, #003300 100%);
+  background: #5d5c61;
 }
 
 .footer {
-  background: linear-gradient(to top, #003399 0%, #003300 100%);
+  background: #557a95;
 }
 
 .content {
-  background: linear-gradient(to top, #003399 0%, #003300 100%);
+  background:  linear-gradient(to left, #b1a296 0%, #557a95 100%);
   // margin: auto;
 }  
