@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_111136) do
+ActiveRecord::Schema.define(version: 2019_11_05_115856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,34 @@ ActiveRecord::Schema.define(version: 2019_10_27_111136) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+  end
+
+  create_table "wages", force: :cascade do |t|
+    t.datetime "date"
+    t.string "asset_type"
+    t.string "asset_code"
+    t.string "pit_id"
+    t.string "size"
+    t.boolean "acm"
+    t.string "status"
+    t.string "shift"
+    t.decimal "trench_length"
+    t.decimal "concrete", precision: 7, scale: 2
+    t.decimal "bitumen", precision: 7, scale: 2
+    t.decimal "paver", precision: 7, scale: 2
+    t.decimal "brick", precision: 7, scale: 2
+    t.decimal "rock", precision: 7, scale: 2
+    t.decimal "riser", precision: 7, scale: 2
+    t.decimal "extras", precision: 7, scale: 2
+    t.text "extras_description"
+    t.decimal "deduction", precision: 7, scale: 2
+    t.text "deduction_description"
+    t.text "comments"
+    t.decimal "total", precision: 10, scale: 2
+    t.decimal "total_with_gst", precision: 10, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "worker"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

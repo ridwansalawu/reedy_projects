@@ -1,4 +1,6 @@
 class AssetsController < ApplicationController
+
+  # @@username =  session[:username]
    layout "public"
 
    before_action :confirm_logged_in

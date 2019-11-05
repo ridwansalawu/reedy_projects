@@ -38,6 +38,7 @@ class AccessController < ApplicationController
     if authorized_user 
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
+      # @@loggedinuser = authorized_user.username
       puts "------------HERE is the ID : #{authorized_user.id}--------------------"
       flash[:notice] = "you are now logged in."
       redirect_to(admin_path)

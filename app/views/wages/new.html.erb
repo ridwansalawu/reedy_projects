@@ -1,0 +1,83 @@
+
+<h1>Time Sheet</h1>
+
+
+<%= button_to  "Wage" %>
+
+<%
+=begin%>
+ <td><%= f.radio_button(:acm, "yes") %></td> 
+<%
+=end%>
+
+<%
+=begin%>
+ <%= error_messages_for(f.object) %> 
+<%
+=end%>
+
+
+<%= form_for( @wages ) do |f| %>
+
+
+
+<table summary="wages form field">
+
+
+
+<tr class="header">
+
+    <th>Worker</th>
+    <th>Date</th>
+    <th>Asset Code</th>
+    <th>Asset Type</th>
+    <th>Pit Id</th>
+    <th>ACM?</th>
+    <th>Trench Length</th>
+    <th>Shift</th>
+    <th>Pit Size</th>
+    <th>Concrete</th>
+    <th>Bitumen</th>
+    <th>Brick</th>
+    <th>Rock</th>
+    <th>Riser</th>
+    <th>Comments</th>
+    <th>Status</th>
+    <th>Total</th>
+    <th>Total(gst included)</th>
+    <th>Actions</th>
+</tr>
+ 
+      <tr>
+         <td><%= f.text_field(:worker, :value => @username) %></td>
+         <td><%= f.date_field(:date) %></td>
+         <td><%= f.text_field(:asset_code) %></td>
+         <td><%= f.select(:asset_type,  [["pit"], ["trench"], ["pole_riser"], ["remediation"]]) %></td>
+         <td><%= f.text_field(:pit_id) %></td>
+         <td><%= f.select(:acm,  [["Yes"], ["No"]]) %></td>
+         <td><%= f.text_field(:trench_length) %></td>
+         <td><%= f.select(:shift,  [["Day"], ["Night"]]) %></td>
+         <td><%= f.select(:size,  [["medium"], ["large"], ["xlarge"]]) %></td>
+         <td><%= f.text_field(:concrete) %></td>
+         <td><%= f.text_field(:bitumen) %></td>
+         <td><%= f.text_field(:brick) %></td>
+         <td><%= f.text_field(:rock) %></td>
+         <td><%= f.select(:shift,  [["No"], ["Yes"]]) %></td>
+         <td><%= f.text_area(:comments) %></td>
+         <td><%= f.select(:status,  [["incomplete"], ["complete"], ["defect"], ["paid"]]) %></td>
+         <td><%= f.text_field(:total) %></td>
+         <td><%= f.text_field(:total) %></td>
+         <td>
+         <%= f.submit("calculate") %>
+         
+         </td>
+
+
+      </tr>
+
+      
+      
+      
+    </table>
+
+<% end %>

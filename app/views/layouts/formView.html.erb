@@ -2,7 +2,8 @@
 <html>
     <head>
       <title>Reedy Projects: Home<%= " | #{@page_title}" if @page_title %></title>
-      <%= stylesheet_link_tag('application', :media => 'all') %>
+      <%= stylesheet_link_tag('formView', :media => 'all') %>
+
     </head>
     
     <body>
@@ -52,13 +53,25 @@
                 <%= yield %>
             </article>
 
-            <aside class="sidebar">
+            <footer class="footer">
+              <p id="copyright">&copy;<%= Time.now.year %>Reedy Projects</p>
+            
+            
+            </footer>
+
+            <%
+=begin%>
+ <aside class="sidebar">
            
-            </aside>
+            </aside> 
+<%
+=end%>
 
 
 
-            <aside class="photos slideshow-container">
+            <%
+=begin%>
+ <aside class="photos slideshow-container">
 
                  <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
@@ -124,11 +137,7 @@
             <span class="dot" onclick="currentSlide(3)"></span> 
             </div>
 
-            <footer class="footer">
-              <p id="copyright">&copy;<%= Time.now.year %>Reedy Projects</p>
             
-            
-            </footer>
 
         </div>
 
@@ -150,6 +159,9 @@ function showSlides() {
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
-</script>
+</script> 
+<%
+=end%>
+</div>
     </body>
 </html>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+ 
   root 'public#index'
   
   get 'show/permalink', :to => 'public#show'
@@ -39,6 +40,12 @@ Rails.application.routes.draw do
     end
 
     resources :users do
+      member do
+        get :delete
+      end
+    end
+
+    resources :wages do
       member do
         get :delete
       end
