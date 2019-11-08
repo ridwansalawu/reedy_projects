@@ -1,6 +1,7 @@
 class AssetsController < ApplicationController
 
   # @@username =  session[:username]
+   @@super_users = ["reedy", "john"]
    layout "public"
 
    before_action :confirm_logged_in

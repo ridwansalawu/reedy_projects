@@ -46,9 +46,6 @@ Rails.application.routes.draw do
     end
 
     resources :wages do
-      member do
-        get :delete
-      end
     end
 
 

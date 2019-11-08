@@ -1,0 +1,79 @@
+<%= form_with(model: @wage, local: true ) do |f| %>
+
+<% if @wage.errors.any? %>
+  <div id= "error_explanation">
+    <h2>
+        <%= pluralize(@wage.errors.count, "error") %>
+        prohibited further processing:
+    </h2>
+        <ul>
+            <% @wage.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+        </ul>
+  </div>
+<% end %>  
+
+
+
+
+<table summary="wages form field">
+
+
+
+<tr class="header">
+    <th style='<%= "display: none" if @xyz.exclude?(@username) %>'>Worker</th>
+    <th>Date</th>
+    <th>Asset Code</th>
+    <th>Asset Type</th>
+    <th>Pit Id</th>
+    <th>ACM?</th>
+    <th>Trench Length</th>
+    <th>Shift</th>
+    <th>Pit Size</th>
+    <th>Concrete</th>
+    <th>Bitumen</th>
+    <th>Brick</th>
+    <th>Rock</th>
+    <th>Riser</th>
+    <th>Comments</th>
+    <th>Status</th>
+    <th>Total</th>
+    <th>Total(gst included)</th>
+    <th>Actions</th>
+</tr>
+ 
+      <tr>
+      
+         <td style='<%= "display: none" if @xyz.exclude?(@username) %>'>  <%= f.text_field(:worker, :value => @worker ) %></td>
+         <td><%= f.date_field(:date) %></td>
+         <td><%= f.text_field(:asset_code) %></td>
+         <td><%= f.select(:asset_type,  [["pit"], ["trench"], ["pole_riser"], ["remediation"]]) %></td>
+         <td><%= f.text_field(:pit_id) %></td>
+         <td><%= f.select(:acm,  [["Yes"], ["No"]]) %></td>
+         <td><%= f.text_field(:trench_length) %></td>
+         <td><%= f.select(:shift,  [["Day"], ["Night"]]) %></td>
+         <td><%= f.select(:size,  [["medium"], ["large"], ["xlarge"]]) %></td>
+         <td><%= f.text_field(:concrete) %></td>
+         <td><%= f.text_field(:bitumen) %></td>
+         <td><%= f.text_field(:brick) %></td>
+         <td><%= f.text_field(:rock) %></td>
+         <td><%= f.select(:shift,  [["No"], ["Yes"]]) %></td>
+         <td><%= f.text_area(:comments) %></td>
+         <td><%= f.select(:status,  [["incomplete"], ["complete"], ["defect"], ["paid"]]) %></td>
+         <td><%= f.text_field(:total) %></td>
+         <td><%= f.text_field(:total) %></td>
+         <td>
+         <%= f.submit("update") %>
+         
+         </td>
+
+
+      </tr>
+
+      
+      
+      
+    </table>
+
+<% end %>

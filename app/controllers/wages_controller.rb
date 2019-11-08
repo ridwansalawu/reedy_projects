@@ -1,43 +1,73 @@
 class WagesController < ApplicationController
+  @@xyz = ["reedy", "john"]
 
   layout "formView"
 
 
   before_action :confirm_logged_in
+  # before_action :@username => session[:username]
 
 
 
 
 
   def index
+    @wages = Wage.all
   end
 
   def show
+    @wage = Wage.find(params[:id])
   end
 
   def new
     @username =  session[:username]
-    @wages = Wage.new()
-  end
-
-  def create 
-    @wage = Wage.new(wage_params)
-    @wage.save
-    if @wage.save
-      puts "++++++++++++++++++++++++++++++saved________________------------====="
-    end
-    redirect_to @wage
-    
-    puts "++++++++++ about to create #{params[:wage]}++++++++++"
-    # render plain: params[:wage].inspect
+    @wage = Wage.new()
+    @worker = Wage.worker_name(@username)
+    @xyz = ["john", "reedypee"]
 
   end
 
   def edit
+    @wage = Wage.find(params[:id])
   end
 
-  def delete
+  def create 
+    @wage = Wage.new(wage_params)
+    @xyz = ["john", "reedypee"]
+   
+    if @wage.save
+      redirect_to @wage
+    else
+      render "new"
+   end
+   # render plain: params[:wage].inspect
   end
+
+  def update
+    @wage = Wage.find(params[:id])
+
+    if @wage.update(wage_params)
+      redirect_to @wage
+
+    else 
+      render 'edit'
+    end
+  end
+
+  
+
+  def destroy
+    @wage = Wage.find(params[:id])
+    if @wage.destroy
+    puts "+++++++destroyed=========="
+    else 
+      puts "=================not destroyed=========================="
+    end
+
+    redirect_to wages_path
+  end
+
+
 
   private
 
