@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   layout "public"
 
-    # before_action :confirm_logged_in
+    before_action :logout, :only => [:new]
+    
 
   def index
     @users = User.all
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
 
 
   def new
+   
     @user = User.new()
   end
 
@@ -72,5 +74,24 @@ class UsersController < ApplicationController
       
     end
   end
+
+  def confirm_logged_out
+    unless session[:user_id]
+      flash[:notice] = "please log in."
+      redirect_to(access_login_path)
+      
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    session[:username] = nil
+    flash[:notice] = "Logged Out"
+    
+
+    
+  end
+
+
 
 end

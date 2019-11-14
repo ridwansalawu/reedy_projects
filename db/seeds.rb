@@ -119,5 +119,21 @@ Rate.create(
 
 
 
+# levels = ["director", "manager", "supervisor", "team_leader", "civil_worker", "labourer", "subcontractor"]
+
+# levels.each do |level|
+#     Grade.create(rank: level)
+
+# end
 
 
+# levels.each do |level|
+#     Grade.create(rank: level)
+
+# end
+
+# fee_items = [:xlarge_pit, :large_pit, :medium_pit, :xlarge_acm, :large_acm, :medium_acm, :trench, :concrete, :bitumen, :paver, :brick, :rock, :riser, :night, :extras, :others]
+
+# fee_items.each do |i|
+#     Fee.create(item: i)
+# end

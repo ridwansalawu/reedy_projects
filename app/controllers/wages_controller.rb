@@ -5,7 +5,7 @@ class WagesController < ApplicationController
 
 
   before_action :confirm_logged_in
-  # before_action :@username => session[:username]
+  before_action :user_name
 
 
 
@@ -70,6 +70,10 @@ class WagesController < ApplicationController
 
 
   private
+
+  def user_name
+    @username =  session[:username]
+  end
 
   def wage_params
     params.require(:wage).permit(:worker,

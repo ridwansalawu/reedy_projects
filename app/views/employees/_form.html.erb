@@ -1,8 +1,8 @@
 <%= error_messages_for(f.object) %>
-<table summary="Employee form field">
+<table summary="Employee form field" class= "employee-form">
       <tr>
         <th>First Name</th>
-        <td><%= f.text_field(:first_name) %></td>
+        <td id="fn"><%= f.text_field(:first_name) %></td>
       </tr>
       <tr>
         <th>Last Name</th>
@@ -23,5 +23,9 @@
       <tr>
         <th>Address</th>
         <td><%= f.text_field(:address) %></td>
+      </tr>
+       <tr>
+        <th>Grade</th>
+        <td><%= f.number_field(:grade_id) %></td>
       </tr>
     </table>

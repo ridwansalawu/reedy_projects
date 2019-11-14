@@ -138,10 +138,8 @@ html {
   font-family: arial, helvetica, sans-serif;
   background-color: rgb(0, 0, 0);
   // background-image: image-url("lendlease_main.jpg");
-  
-  
-  
 }
+
 img {
 	max-width: 100%;
 }
@@ -465,4 +463,20 @@ img {
 
 .hidden-cell {
   display: "none";
+}
+
+#welcome-username {
+  color: #e1f2f3;
+  text-align: right;
+  
+}
+
+table.employee-form td{
+  border: #AA0000 solid 2px;
+
+}
+
+#next-view {
+
+ 
 }

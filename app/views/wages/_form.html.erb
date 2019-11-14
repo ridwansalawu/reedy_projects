@@ -1,3 +1,4 @@
+
 <%= form_with(model: @wage, local: true ) do |f| %>
 
 <% if @wage.errors.any? %>
@@ -13,6 +14,7 @@
         </ul>
   </div>
 <% end %>  
+
 
 
 
@@ -63,10 +65,8 @@
          <td><%= f.select(:status,  [["incomplete"], ["complete"], ["defect"], ["paid"]]) %></td>
          <td><%= f.text_field(:total) %></td>
          <td><%= f.text_field(:total) %></td>
-         <td>
-         <%= f.submit("update") %>
-         
-         </td>
+         <td><%= f.submit("update") %></td>
+         <td><%= f.button "more", :id => "next-view" %></td>
 
 
       </tr>

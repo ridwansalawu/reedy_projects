@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_115856) do
+ActiveRecord::Schema.define(version: 2019_11_09_091112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,27 @@ ActiveRecord::Schema.define(version: 2019_11_05_115856) do
     t.string "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "grade_id"
+    t.index ["grade_id"], name: "index_employees_on_grade_id"
+  end
+
+  create_table "fees", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "item"
+    t.decimal "price", precision: 7, scale: 2
+  end
+
+  create_table "fees_grades", id: false, force: :cascade do |t|
+    t.integer "fee_id"
+    t.integer "grade_id"
+    t.index ["fee_id", "grade_id"], name: "index_fees_grades_on_fee_id_and_grade_id"
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "rank"
   end
 
   create_table "rates", force: :cascade do |t|
@@ -147,4 +168,5 @@ ActiveRecord::Schema.define(version: 2019_11_05_115856) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "employees", "grades"
 end

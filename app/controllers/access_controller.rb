@@ -55,6 +55,7 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     session[:username] = nil
     flash[:notice] = "Logged Out"
+    
     redirect_to(access_login_path)
 
     
